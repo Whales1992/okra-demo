@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://cdn.okra.ng/v2/bundle.js"></script>
+</head>
+
+<button id="link-button">Link OKra Account</button>
+
+<script src="https://cdn.okra.ng/v2/bundle.js"></script>
+<script type="text/javascript">
+(async function() {
+  document.getElementById('link-button').onclick = function() {
+        Okra.buildWithOptions({
+        name: 'Peter the Builder',
+        env: 'sandbox',
+        callback_url: "address",
+        app_id: 'Teamlend',// app_id from your App builder
+        key: '95f62c9c-5f07-5a1e-a21d-6e1f6ed634c8', // Your key from the Okra dashboard
+        token: '6097281307d9a96812c54b3b', // Your token from the okra dashboard
+        products: ['auth','identity','balance','transactions', 'income'], //in lowercase
+        onSuccess: function(data){
+            console.log('options success', data)
+        },
+        onClose: function(){
+            console.log('options close')
+        }
+      });
+  };
+})();
+</script>
+
+</html>
+
+
+<!-- {
+  "auth": {
+      "bank_details": {
+          "_id": "5d6fe57a4099cc4b210bbeae",
+          "name": "Ecobank Nigeria",
+          "slug": "ecobank-nigeria",
+          "logo": "https://okra-images.s3.eu-west-3.amazonaws.com/Ecobank+Logo.svg",
+          "icon": "https://okra-images.s3.eu-west-3.amazonaws.com/Ecobank+Logo+Color.svg",
+          "png_logo": "http://d1f1tz87xvarxp.cloudfront.net/Nigerian+Banks/Ecobank.png",
+          "v2_logo": "https://okra-images.s3.eu-west-3.amazonaws.com/Ecobank+Logo.svg",
+          "v2_icon": "https://okra-images.s3.eu-west-3.amazonaws.com/Ecobank+Logo+Color.svg"
+      },
+      "bank_id": "5d6fe57a4099cc4b210bbeae",
+      "clientId": "okr-1642512446012-UUD9zC8Hy",
+      "customer_id": "61e6c028a903a300375c43fa",
+      "status": true,
+      "type": "validate",
+      "login_type": "bank"
+  },
+  "income": null,
+  "identity": {
+      "fullname": "Blessing Vanessa Bing",
+      "firstname": "Blessing",
+      "lastname": "Bing",
+      "middlename": "Vanessa",
+      "id": "61e6c06345941c001de539e7",
+      "bvn": "42480182972",
+      "nin": "4832617203",
+      "score": 76,
+      "env": "production-sandbox",
+      "created_at": "2022-01-18T13:28:03.261Z",
+      "last_updated": "2022-01-18T13:28:03.261Z",
+      "aliases": [
+          "Endurance  Rosemary Green",
+          "Faith James"
+      ],
+      "customer": "61e6c028a903a300375c43fa",
+      "dob": "2021-04-20T19:14:26+00:00",
+      "gender": "M",
+      "phone": [
+          "05543310205",
+          "01647300890"
+      ],
+      "email": [
+          "Grady.Goodwin@gmail.com",
+          "Lura_Hills62@hotmail.com"
+      ],
+      "address": [
+          "4996 Mr., Williams Ford Road, Ovia North-East Ekiti"
+      ],
+      "verified": true,
+      "photo_id": [
+          {
+              "_id": "61e6c028a903a300375c43ff",
+              "url": "https://okra-profile-pictures.s3.eu-west-3.amazonaws.com/identities/sannboxFace.png",
+              "image_type": "ID"
+          }
+      ],
+      "status": "true",
+      "verification_country": "NG",
+      "lga_of_origin": "Ndokwa East",
+      "lga_of_residenc": "Lagos Island",
+      "marital_status": "Single",
+      "nationality": "Nigeria",
+      "state_of_origin": "Delta State",
+      "state_of_residence": "Lagos State",
+      "projects": [
+          "60972813d883b66ae72ce122"
+      ]
+  },
+  "error": null,
+  "payment_authorization": null,
+  "authorization_id": null,
+  "authorizationId": null,
+  "done": true,
+  "accounts": [
+      {
+          "manual": false,
+          "nuban": "4248017620",
+          "id": "61e6c0634063c16cf1fe25af",
+          "connected": false,
+          "name": "Blessing Bing",
+          "type": "Domiciliary"
+      },
+      {
+          "manual": false,
+          "nuban": "4248012607",
+          "id": "61e6c0634063c16cf1fe25c0",
+          "connected": true,
+          "name": "Blessing Bing",
+          "type": "Savings"
+      },
+      {
+          "manual": false,
+          "nuban": "4248010466",
+          "id": "61e6c0634063c16cf1fe25d5",
+          "connected": false,
+          "name": "Blessing Bing",
+          "type": "Current"
+      }
+  ],
+  "bank_id": "5d6fe57a4099cc4b210bbeae",
+  "customer_id": "61e6c028a903a300375c43fa",
+  "balance": {
+      "formatted": [
+          {
+              "available_balance": 10122552,
+              "ledger_balance": 10122552,
+              "currency": "NGN",
+              "name": "Blessing Bing",
+              "nuban": "4248017620",
+              "ref": "domicialiary-account",
+              "status": "active",
+              "type": "Domiciliary",
+              "account": "61e6c0634063c16cf1fe25af"
+          },
+          {
+              "available_balance": 10179867,
+              "ledger_balance": 10179867,
+              "currency": "NGN",
+              "name": "Blessing Bing",
+              "nuban": "4248012607",
+              "ref": "saving-account",
+              "status": "active",
+              "type": "Savings",
+              "account": "61e6c0634063c16cf1fe25c0"
+          },
+          {
+              "available_balance": 10055450,
+              "ledger_balance": 10055450,
+              "currency": "NGN",
+              "name": "Blessing Bing",
+              "nuban": "4248010466",
+              "ref": "current-account",
+              "status": "active",
+              "type": "Current",
+              "account": "61e6c0634063c16cf1fe25d5"
+          }
+      ],
+      "data": {
+          "formatted": [
+              {
+                  "available_balance": 10122552,
+                  "ledger_balance": 10122552,
+                  "currency": "NGN",
+                  "name": "Blessing Bing",
+                  "nuban": "4248017620",
+                  "ref": "domicialiary-account",
+                  "status": "active",
+                  "type": "Domiciliary",
+                  "account": "61e6c0634063c16cf1fe25af"
+              },
+              {
+                  "available_balance": 10179867,
+                  "ledger_balance": 10179867,
+                  "currency": "NGN",
+                  "name": "Blessing Bing",
+                  "nuban": "4248012607",
+                  "ref": "saving-account",
+                  "status": "active",
+                  "type": "Savings",
+                  "account": "61e6c0634063c16cf1fe25c0"
+              },
+              {
+                  "available_balance": 10055450,
+                  "ledger_balance": 10055450,
+                  "currency": "NGN",
+                  "name": "Blessing Bing",
+                  "nuban": "4248010466",
+                  "ref": "current-account",
+                  "status": "active",
+                  "type": "Current",
+                  "account": "61e6c0634063c16cf1fe25d5"
+              }
+          ]
+      }
+  },
+  "transactions": {
+      "transactions": {
+          "callback_url": "https://api.okra.ng/v2/callback?record=null&method=TRANSACTIONS"
+      },
+      "income": {
+          "callback_url": "https://api.okra.ng/v2/callback?record=null&method=INCOME"
+      }
+  },
+  "launchAgain": false,
+  "hideExit": false,
+  "options": null,
+  "success": true
+} -->
